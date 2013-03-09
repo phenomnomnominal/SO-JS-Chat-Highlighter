@@ -2,11 +2,7 @@
 // @name SOJSChatHighlight
 // @description Syntax Highlighting for code in StackOverflow JS chatroom!
 // @match http://chat.stackoverflow.com/rooms/*
-<<<<<<< HEAD
-// @version 0.0.2
-=======
 // @version 0.0.3
->>>>>>> Updating based on prettify.js doc
 // ==/UserScript==
  
 var main = function () {
