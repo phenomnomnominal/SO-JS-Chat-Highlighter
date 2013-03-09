@@ -2,7 +2,7 @@
 // @name SOJSChatHighlight
 // @description Syntax Highlighting for code in StackOverflow JS chatroom!
 // @match http://chat.stackoverflow.com/rooms/*
-// @version 0.0.1
+// @version 0.0.2
 // ==/UserScript==
  
 var main = function () {
@@ -15,6 +15,8 @@ var main = function () {
   $(document.body).append($('<script>', { src: "https://raw.github.com/phenomnomnominal/SO-JS-Chat-Highlighter/master/prettify.js", onload: highlight }));
   $(document.body).append($('<link>', { href: "https://raw.github.com/phenomnomnominal/SO-JS-Chat-Highlighter/master/prettify.css", rel: 'stylesheet'}));
   $('head').append($('<style>', { type: 'text/css', html: '.message .prettyprint { background: #ffffff; border: 1px solid #f6f6f6; border-radius: 6px; }' }));
+ 
+  $(document).on('click', '.more-data', {}, highlight);
  
   $.post("/ws-auth", fkey({roomid: /\d+/.exec(location)[0] }), function (data) { 
       var socket = new WebSocket(data.url + "?l=99999999999");
