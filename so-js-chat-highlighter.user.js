@@ -2,12 +2,16 @@
 // @name SOJSChatHighlight
 // @description Syntax Highlighting for code in StackOverflow JS chatroom!
 // @match http://chat.stackoverflow.com/rooms/*
+<<<<<<< HEAD
 // @version 0.0.2
+=======
+// @version 0.0.3
+>>>>>>> Updating based on prettify.js doc
 // ==/UserScript==
  
 var main = function () {
-  var highlight = function () {
-      $(".message pre, .message code").addClass("language-javascript prettyprint");
+  var highlight = function (event) {
+      $(".message pre, .message code").addClass("lang-js linenums prettyprint");
       prettyPrint();
       $('.prettyprint .tag').removeClass('tag').addClass('htmlTag');
   }
