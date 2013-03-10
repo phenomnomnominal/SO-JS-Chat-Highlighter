@@ -7,7 +7,7 @@
  
 var main = function () {
   var highlight = function (event) {
-      $(".message pre, .message code").addClass("lang-js linenums prettyprint");
+      $(".message pre, .message code").addClass("lang-js prettyprint");
       prettyPrint();
       $('.prettyprint .tag').removeClass('tag').addClass('htmlTag');
   }
