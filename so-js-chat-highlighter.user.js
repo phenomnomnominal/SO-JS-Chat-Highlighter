@@ -11,11 +11,12 @@ var main = function () {
   var highlight = function (event) {
       $(".message pre, .message code").not('.already-done').addClass("language-javascript prettyprint already-done");
       prettyPrint();
-      $(".message pre, .message code").removeClass("language-javascript prettyprint");
-      
+  
       // Fix up conflicts with SOChat UI
-      $('.prettyprint .tag').removeClass('tag').addClass('htmlTag');
       $(".content:has(.already-done) ~ .meta").css("background-color","inherit")
+      $('.prettyprint .tag').removeClass('tag').addClass('htmlTag');
+      
+      $(".message pre, .message code").removeClass("language-javascript prettyprint");    
   }
  
   $(document.body).append($('<script>', { src: "https://raw.github.com/phenomnomnominal/SO-JS-Chat-Highlighter/master/prettify.js", onload: highlight }));
