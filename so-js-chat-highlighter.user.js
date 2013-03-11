@@ -2,7 +2,7 @@
 // @name SOJSChatHighlight
 // @description Syntax Highlighting for code in StackOverflow JS chatroom!
 // @match http://chat.stackoverflow.com/rooms/*
-// @version 0.0.6
+// @version 0.0.7
 // ==/UserScript==
 
 var main = function () {
@@ -19,7 +19,7 @@ var main = function () {
       $(".message pre, .message code").removeClass("language-javascript prettyprint");    
   }
  
-  $(document.body).append($('<script>', { src: "https://raw.github.com/phenomnomnominal/SO-JS-Chat-Highlighter/master/prettify.js", onload: highlight }));
+  $(document.body).append($('<script>', { src: "//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js", onload: highlight }));
   $('head').append($('<style>', { type: 'text/css', html: css }));
  
   $(document).on('click', '.more-data', {}, highlight);
